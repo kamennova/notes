@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'Space Mono';
+    src: url('./fonts/SpaceMono-Regular.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+    background: red;
+    color: white;
+    border: 1px solid firebrick;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 7px 12px 6px;
+    user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
-.App-link {
-  color: #61dafb;
+.list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-wrapper {
+    padding: 0 30px;
+}
+
+.draggable {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.draggable:hover {
+    cursor: pointer;
+}
+
+.red {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black
+}
+
+/*----*/
+
+.boards-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.boards-list a {
+    text-decoration: none;
+}
+
+.board-item {
+    padding: 20px;
+    min-width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.board-name {
+    color: black;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.board-detail {
+    color: gray;
+}
+
+/*-----*/
+
+.display-header, .page-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.editor-buttons, .header-buttons {
+    display: flex;
+    margin-left: 100px;
+}
+
+.editor-buttons .btn, .header-buttons .btn {
+    margin-right: 8px;
+}
+
+/*----*/
+
+.blocks-wrapper {
+    font-family: 'Space Mono';
+    position: relative;
+    padding: 0 30px;
+}
+
+.block {
+    display: inline-block;
+    padding: 10px;
+
+    background: white;
+    border-radius: 5px;
+
+    text-align: center;
+    border: 2px solid lightgray;
+}
+
+.node.bordered {
+    border: 2px solid lightgray;
+}
+
+.block:not(.locked):hover {
+    cursor: grab;
+}
+
+/*---*/
+
+.children-container {
+    margin-top: 10px;
+}
+
+.children-container.layout-horizontal {
+    display: flex;
+}
+
+.children-container.layout-horizontal > div:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.node {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.node:hover {
+    cursor: pointer;
+}
+
+.node.parent {
+    padding: 5px 4px;
+    font-weight: bold;
+}
+
+.node.child {
+    padding: 3px 3px;
+}
+
+.node.child:hover {
+    background-color: #e4e4e4;
+}
+
+.qualities .icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: red;
+}
+
+.block.horizontal .icon {
+    margin: 0 auto 5px;
+}
+
+.qualities li {
+    margin-left: 12px;
+    text-align: center;
+}
+
+.qualities li:first-of-type {
+    margin-left: 0;
 }
