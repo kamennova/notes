@@ -1,3 +1,4 @@
+import { BoardInfo } from "./types/BoardInfo";
 import { GraphData } from "./types/GraphData";
 
 export const DATA: GraphData = {
@@ -28,8 +29,8 @@ export const DATA: GraphData = {
     ]
 };
 
-export const BOARDS = [
-    { name: 'App ideas', itemsCount: 12 },
-    { name: 'CSS Cheatsheet', itemsCount: 10 },
-    { name: 'Web-design', itemsCount: 81 }
+export const BOARDS: BoardInfo[] = [
+    { name: 'App ideas', itemsCount: 12, icon: 'fa-lightbulb' },
+    { name: 'CSS Cheatsheet', itemsCount: 10, icon: 'fa-info', color: 'blue' },
+    { name: 'Web-design', itemsCount: 81, icon: 'fa-question', color: 'lightgrey' }
 ];

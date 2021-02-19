@@ -4,7 +4,93 @@
 }
 
 body {
+    position: relative;
     font-size: 14px;
+}
+
+.app-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+    height: 100vh;
+    background-color: #e6e6e6;
+
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 13px;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: grey;
+    text-align: center;
+    padding: 5px 0;
+    font-style: italic;
+}
+
+.logo span {
+    text-align: center;
+}
+
+main {
+    min-height: 100vh;
+    padding-left: 56px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.menu-links {
+    padding: 0 4px !important;
+    flex-direction: column;
+    margin-top: 200px !important;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-link {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 0;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #505050;
+    text-transform: lowercase;
+    transition: linear background-color 0.1s;
+}
+
+.menu-link:hover {
+    background-color: lightgray;
+}
+
+.menu-link.menu-btn {
+    color: white;
+    background: #ff3636;
+    border: 1px solid #b40000;
+}
+
+.menu-link i {
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.menu-link a {
+    text-decoration: none;
+    color: black;
 }
 
 .btn {
@@ -15,11 +101,18 @@ body {
     border-radius: 4px;
     padding: 7px 12px 6px;
     user-select: none;
+    line-height: 1;
 }
 
 .btn:hover {
     cursor: pointer;
     opacity: 0.7;
+}
+
+.btn i {
+    font-size: 9px;
+    margin-right: 5px;
+    line-height: 1.9;
 }
 
 .list {
@@ -49,6 +142,88 @@ body {
     border: 2px solid black
 }
 
+.modal {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px 30px;
+
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    width: 25px;
+    height: 25px;
+    line-height: 1;
+    padding: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    font-size: 16px;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main-footer {
+    width: 100%;
+    padding: 10px 0 30px;
+    border-top: 1px solid lightgrey;
+    color: grey;
+    margin-top: auto;
+}
+
+.main-footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-footer i {
+    margin-right: 4px;
+}
+
+/*----*/
+
+.input-label {
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 5px 12px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 /*----*/
 
 .boards-list {
@@ -68,12 +243,32 @@ body {
     border-radius: 5px;
     margin-right: 20px;
     text-decoration: none;
+    transition: 0.1s linear all;
+}
+
+.board-item:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .board-name {
     color: black;
     margin-top: 0;
+    margin-bottom: 8px;
     text-decoration: none;
+}
+
+.board-name i {
+    width: 25px;
+    height: 25px;
+    color: white;
+    background: pink;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1;
+    padding-top: 6px;
+    margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .board-detail {
@@ -82,18 +277,23 @@ body {
 
 /*-----*/
 
-.display-header, .page-header {
+.page-header {
     display: flex;
     align-items: center;
-    padding: 10px 30px;
 }
 
-.editor-buttons, .header-buttons {
+.page-header .delimiter {
+    display: inline-block;
+    margin: 0 30px;
+    font-size: 13px;
+    color: grey;
+}
+
+.header-buttons {
     display: flex;
-    margin-left: 100px;
 }
 
-.editor-buttons .btn, .header-buttons .btn {
+.header-buttons .btn {
     margin-right: 8px;
 }
 
